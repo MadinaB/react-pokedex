@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import "./App.css";
+import React, { useEffect, useState } from 'react';
+import './App.css';
 
 function App() {
   const [pokemon, setPokemon] = useState([]);
@@ -7,7 +7,7 @@ function App() {
   const [details, setDetails] = useState(null);
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
+    fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
       .then(response => response.json())
       .then(data => {
         setPokemon(data.results);
@@ -44,9 +44,9 @@ function PokedexList(props) {
   return (
     <ul className="pokedex-list">
       {pokemon.map((p, index) => {
-        const number = (index + 1).toString().padStart(3, "0");
+        const number = (index + 1).toString().padStart(3, '0');
         const isSelected = p.name === selectedPokemon;
-        const buttonClass = isSelected ? "active" : null;
+        const buttonClass = isSelected ? 'active' : null;
         return (
           <li key={p.name}>
             <button
@@ -82,7 +82,7 @@ function PokedexDescription(props) {
   let description = null;
   if (species != null) {
     description = species.flavor_text_entries.find(
-      entry => entry.language.name === "en"
+      entry => entry.language.name === 'en',
     ).flavor_text;
   }
 
@@ -116,7 +116,7 @@ function PokedexSummary(props) {
 
   if (details != null) {
     const name = details.name.toUpperCase();
-    const number = details.id.toString().padStart(3, "0");
+    const number = details.id.toString().padStart(3, '0');
     content = (
       <>
         <h1>{name}</h1>

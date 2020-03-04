@@ -1,6 +1,6 @@
 @font-face {
   font-family: PokeFont;
-  src: url(https://raw.githubusercontent.com/mariusschulz/react-pokedex/master/public/pokemon_gb.otf);
+  src: url(https://raw.githubusercontent.com/danielbuechele/react-pokedex/master/public/pokemon_gb.otf);
 }
 
 * {
